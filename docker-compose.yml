@@ -37,3 +37,13 @@ services:
   #   PGADMIN_DEFAULT_PASSWORD: root
   #  ports: 
   #   - '5050:5050'
+  frontend:
+    image: nginx:alpine
+    restart: always
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./alaya-gift-frontend/build/public:/usr/share/nginx/html
+    #  - ./nginx/conf.d/:/etc/nginx/conf.d/

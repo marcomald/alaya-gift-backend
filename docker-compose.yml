@@ -1,0 +1,39 @@
+version: '3'
+services:
+  strapi:
+    image: strapi/strapi
+    restart: always
+    environment:
+      DATABASE_CLIENT: postgres
+      DATABASE_NAME: strapi
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: strapi
+      DATABASE_PASSWORD: strapi
+    volumes:
+      - ./app:/srv/app
+    ports:
+      - '1337:1337'
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: strapi
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    ports: 
+      - '5432:5432'
+  # pgadmin:
+  #  image: dpage/pgadmin4:latest
+  #  depends_on: 
+  #   - postgres
+  #  environment: 
+  #   PGADMIN_DEFAULT_EMAIL: dldlozano.g@gmail.com
+  #   PGADMIN_DEFAULT_PASSWORD: root
+  #  ports: 
+  #   - '5050:5050'

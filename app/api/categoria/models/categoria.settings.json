@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "category",
+  "info": {
+    "name": "Categoria"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "string"
+    },
+    "seccion": {
+      "model": "seccion",
+      "via": "categorias"
+    },
+    "productos": {
+      "via": "categorias",
+      "collection": "producto"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "image-product",
+  "info": {
+    "name": "Imagenes Producto"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "imagen": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "producto": {
+      "model": "producto",
+      "via": "imagenes_productos"
+    }
+  }
+}

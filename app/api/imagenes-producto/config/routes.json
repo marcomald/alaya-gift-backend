@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/imagenes-productos",
+      "handler": "imagenes-producto.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/imagenes-productos/count",
+      "handler": "imagenes-producto.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/imagenes-productos/:id",
+      "handler": "imagenes-producto.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/imagenes-productos",
+      "handler": "imagenes-producto.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/imagenes-productos/:id",
+      "handler": "imagenes-producto.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/imagenes-productos/:id",
+      "handler": "imagenes-producto.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
